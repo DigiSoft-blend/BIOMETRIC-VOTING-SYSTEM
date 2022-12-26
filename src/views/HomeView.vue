@@ -4,7 +4,6 @@
      <!-- <SideBarVue/> -->
      <TopNav/>
 <VMain
-class="home-hero"
 >
        <!-- <ImageGallery/> -->
 
@@ -12,8 +11,7 @@ class="home-hero"
         justify="center"
         align="center"
         no-gutters
-        height="100vh"
-        class="pa-4"
+        class="pa-4 home-hero"
       >
        
         <v-col
@@ -169,83 +167,11 @@ sm="4"
         size="18"
       ></v-rating>
     </v-card-actions>
-          </v-card>
-
-
-  <!-- <v-card
-    class="mx-auto mt-4"
-    max-width="500"
-  >
-    <template v-slot:loader="{ isActive }">
-      <v-progress-linear
-        :active="isActive"
-        color="deep-purple"
-        height="4"
-        indeterminate
-      ></v-progress-linear>
-    </template>
-
-     
-    <v-card-item>
-      <v-card-title>Cafe Badilico</v-card-title>
-
-      <v-card-subtitle>
-        <span class="mr-1">Local Favorite</span>
-
-        <v-icon
-          color="error"
-          icon="mdi-fire-circle"
-          size="small"
-        ></v-icon>
-      </v-card-subtitle>
-    </v-card-item>
-
-    <v-card-text>
-      <v-row
-        align="center"
-        class="mx-0"
-      >
-        <v-rating
-          :model-value="4.5"
-          color="amber"
-          density="compact"
-          half-increments
-          readonly
-          size="small"
-        ></v-rating>
-
-        <div class="text-grey ms-4">
-          4.5 (413)
-        </div>
-      </v-row>
-
-      <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
-      </div>
-
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-    </v-card-text>
-
-    <v-divider class="mx-4 mb-1"></v-divider>
-
-   
-
-    <v-card-actions>
-      <v-btn
-        color="deep-purple-lighten-2"
-        variant="text"
-       
-      >
-        Reserve
-      </v-btn>
-    </v-card-actions>
-  </v-card> -->
-
+          </v-card>   
   </v-col>
  </v-row> 
-  
 
-   
+
      </VMain>
   </VApp>
 </template>

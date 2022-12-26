@@ -52,6 +52,8 @@
         v-model="drawer"
         absolute
         temporary
+       
+        class="d-flex position-fixed"
       >
         <v-list
           nav
