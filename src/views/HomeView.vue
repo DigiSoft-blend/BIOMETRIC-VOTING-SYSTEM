@@ -304,9 +304,9 @@ export default {
   .home-hero {
     background: url('/pexels-scott-webb-593158.jpg');
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    box-shadow: inset 0 0 0 1000px #09ace8f5;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1000px #09ade864;
   
     /* clip-path: polrgba(175, 238, 247, 0.655)0%, 0% 100%); */
     
