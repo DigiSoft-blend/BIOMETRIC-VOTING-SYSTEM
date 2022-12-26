@@ -305,7 +305,7 @@ export default {
     background-size: cover;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 1000px #274048c1;
+    box-shadow: inset 0 0 0 1000px #010101c1;
   
     /* clip-path: polrgba(175, 238, 247, 0.655)0%, 0% 100%); */
     
