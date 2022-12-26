@@ -68,7 +68,7 @@ class="pa-4"
 >
 
 <v-card
-            color="#385F73"
+            color="black"
             theme="dark"
             class="mt-4"
           >
@@ -121,7 +121,7 @@ class="pa-4"
 
 
           <v-card
-            color="#385F73"
+            color="black"
             theme="dark"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
