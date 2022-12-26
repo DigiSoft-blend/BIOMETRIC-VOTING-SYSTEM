@@ -12,14 +12,14 @@ class="home-hero"
         justify="center"
         align="center"
         no-gutters
-        style="height: 200px;"
+        height="100vh"
         class="pa-4"
       >
        
         <v-col
         cols="12"
         sm="6"
-        class="text-center"
+        class="text-center ma-2"
         >
        
         <v-progress-linear
@@ -110,8 +110,8 @@ sm="4"
 
               <v-avatar
                 class="ma-3"
-                size="125"
-                rounded="100"
+                size="100"
+                rounded="0"
               >
                 <v-img src="/logo_size.jpg"></v-img>
               </v-avatar>
@@ -142,8 +142,8 @@ sm="4"
 
               <v-avatar
                 class="ma-3"
-                size="125"
-                rounded="100"
+                size="100"
+                rounded="0"
               >
                 <v-img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"></v-img>
               </v-avatar>
