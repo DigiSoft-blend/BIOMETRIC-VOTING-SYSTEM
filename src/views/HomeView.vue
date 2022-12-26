@@ -64,7 +64,6 @@ class="home-hero"
 <v-col
 cols="12"
 sm="4"
-class="pa-4"
 >
 
 <v-card
