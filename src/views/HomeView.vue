@@ -33,7 +33,7 @@ class="home-hero"
         <div
          class="mx-auto pa-4"
         >
-          <h1 class="text-white text-h2">
+          <h1 class="text-white">
             Biometric Voting System
           </h1>
           <p class="text-bold text-white">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</p>
