@@ -35,7 +35,7 @@
          <v-list-item
             prepend-avatar="/logo_size.jpg"
           >
-           Biometric Voting System
+           <span class="d-none d-sm-flex">Biometric Voting System</span> 
         </v-list-item>
        
         
