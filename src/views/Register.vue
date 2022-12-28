@@ -7,13 +7,13 @@
       class="mx-auto margin-top"
       max-width="500"
     >
-      <v-card-title class="text-h6 font-weight-regular justify-space-between">
+      <v-card-title class="text-h6 font-weight-regular text-center">
         <span>{{ currentTitle(step) }}</span>
-        <v-avatar
+        <!-- <v-avatar
           color="primary mx-1"
           size="24"
           v-text="step"
-        ></v-avatar>
+        ></v-avatar> -->
       </v-card-title>
   
       <v-window v-model="step">
@@ -111,7 +111,7 @@ import TopNav from '@/components/TopNav.vue'
        
         const currentTitle = (step:any) => {
             switch (step) {
-            case 1: return 'Sign-up'
+            case 1: return 'Sign up to get your voters token'
             case 2: return 'Create a password'
             // default: return 'Account created'
             }
