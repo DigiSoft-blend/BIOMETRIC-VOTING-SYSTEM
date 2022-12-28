@@ -29,11 +29,12 @@
           <p class="text-bold text-white">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</p>
         </div>
 
-            <v-btn
-              variant="flat"
-              color="secondary"
-              class="rounded-pill btn1"
-            > 
+        <router-link to="/registration" class="link">
+          <v-btn
+            variant="flat"
+            color="secondary"
+            class="rounded-pill btn1"
+          > 
 
         <v-icon
           start
@@ -42,6 +43,8 @@
 
             Get Sterted
            </v-btn>
+        </router-link>
+      
         </v-col>
      
        
@@ -158,3 +161,10 @@ sm="4"
   </v-col>
  </v-row>  
 </template>
+
+<style scoped>
+     .link{
+         color: inherit;
+         text-decoration: none;
+     }
+  </style>

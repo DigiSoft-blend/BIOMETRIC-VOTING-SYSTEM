@@ -1,7 +1,8 @@
 
 <template>
 <!-- <TopNav/>  -->
-<v-container float>
+<v-container 
+>
     <v-card
       class="mx-auto margin-top"
       max-width="500"
@@ -9,7 +10,7 @@
       <v-card-title class="text-h6 font-weight-regular justify-space-between">
         <span>{{ currentTitle(step) }}</span>
         <v-avatar
-          color="primary"
+          color="primary mx-1"
           size="24"
           v-text="step"
         ></v-avatar>
@@ -17,18 +18,30 @@
   
       <v-window v-model="step">
         <v-window-item :value="1">
+          <v-img
+              class="mb-4"
+              contain
+              height="128"
+              src="/user (1).png"
+            ></v-img>
           <v-card-text>
             <v-text-field
-              label="Email"
+              label="Voters Email"
               placeholder="john@google.com"
             ></v-text-field>
             <span class="text-caption text-grey-darken-1">
-              This is the email you will use to login to your Vuetify account
+              This is the email we will use to verify you are valid a voter
             </span>
           </v-card-text>
         </v-window-item>
   
         <v-window-item :value="2">
+          <v-img
+              class="mb-4"
+              contain
+              height="128"
+              src="/user (1).png"
+            ></v-img>
           <v-card-text>
             <v-text-field
               label="Password"
@@ -39,7 +52,7 @@
               type="password"
             ></v-text-field>
             <span class="text-caption text-grey-darken-1">
-              Please enter a password for your account
+              Please enter a password for your voters account
             </span>
           </v-card-text>
         </v-window-item>
@@ -50,12 +63,12 @@
               class="mb-4"
               contain
               height="128"
-              src="https://cdn.vuetifyjs.com/images/logos/v.svg"
+              src="/checked (1).png"
             ></v-img>
             <h3 class="text-h6 font-weight-light mb-2">
-              Welcome to Vuetify
+              Registration Successful
             </h3>
-            <span class="text-caption text-grey">Thanks for signing up!</span>
+            <span class="text-caption text-grey">Congratulations!</span>
           </div>
         </v-window-item>
       </v-window>
@@ -67,6 +80,7 @@
           v-if="step > 1"
           variant="text"
           @click="step--"
+          class="rounded-pill"
         >
           Back
         </v-btn>
@@ -76,6 +90,7 @@
           color="primary"
           variant="flat"
           @click="step++"
+          class="rounded-pill"
         >
           Next
         </v-btn>
@@ -98,7 +113,7 @@ import TopNav from '@/components/TopNav.vue'
             switch (step) {
             case 1: return 'Sign-up'
             case 2: return 'Create a password'
-            default: return 'Account created'
+            // default: return 'Account created'
             }
         }
         return {currentTitle,step}

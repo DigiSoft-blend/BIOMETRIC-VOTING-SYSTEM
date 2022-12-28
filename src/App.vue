@@ -9,8 +9,16 @@
 <template>
   <!-- <HomeView/> -->
   <!-- <RegisterVue/> -->
-  <VApp>
+  <VApp 
+    class="colr"
+  >
     <TopNavVue/>
     <RouterView></RouterView>
   </VApp>  
 </template>
+
+<style scoped>
+  .colr{
+    background-color: rgba(224, 224, 224, 0.153);
+  }
+</style>
