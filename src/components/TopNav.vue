@@ -17,18 +17,15 @@
           </v-app-bar-nav-icon>
 
           <v-tabs
-              v-model="tab"
+             
               align-with-title
               class="d-none d-sm-flex"
             >
-             
-              <v-tab
-                v-for="item in items"
-                :key="item"
-              >
-                {{ item }}
-              </v-tab>
-            </v-tabs>
+            <router-link to="/" class="link"><v-tab>Home</v-tab></router-link>
+            <router-link to="/registration" class="link"><v-tab>Register</v-tab></router-link>
+              <v-tab>News</v-tab>
+              <v-tab>Help</v-tab>
+         </v-tabs>
         </template>
        
         
@@ -59,30 +56,44 @@
           nav
           dense
         >
-          <v-list-item-group >
+          <!-- <v-list-item-group > -->
             <v-list density="compact" nav>
-                <v-list-item prepend-icon="mdi-image" title="Color gallery" value="color"></v-list-item>
-                <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
-                <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
+              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-home" title="Home" value="home"></v-list-item></router-link>
+              <router-link to="/registration" class="link"><v-list-item prepend-icon="mdi-account" title="Register" value="register"></v-list-item></router-link>
+              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-earth" title="News" value="News"></v-list-item></router-link>
+              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-help" title="Help" value="Help"></v-list-item></router-link>
             </v-list>
             
-        </v-list-item-group>
+        <!-- </v-list-item-group> -->
         </v-list>
       </v-navigation-drawer>
 
   </template>
 
   <script lang="ts">
+  import { ref } from 'vue';
   export default {
-    el: '#app',
-    data () {
-      return {
-        drawer: false,
-        tab: null,
-        items: [
-          'web', 'shopping', 'videos', 'images', 'news',
-        ],
-      }
+    setup(){
+      const drawer = ref(false)
+      const tab = ref(null)
+      return {drawer,tab}
     }
+    // el: '#app',
+    // data () {
+    //   return {
+    //     drawer: false,
+    //     tab: null,
+    //     items: [
+    //       'web', 'shopping', 'videos', 'images', 'news',
+    //     ],
+    //   }
+    // }
   }
   </script>
+
+  <style scoped>
+     .link{
+         color: inherit;
+         text-decoration: none;
+     }
+  </style>
