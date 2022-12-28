@@ -584,8 +584,7 @@ sm="4"
     </v-row>
   </v-container>
 
- 
-  
+ <Footer/>
   </VApp>
 </template>
 
@@ -593,6 +592,7 @@ sm="4"
  import SideBarVue from '../components/SideBar.vue';
  import ImageGallery from '../components/ImageGallery.vue';
  import TopNav from '../components/TopNav.vue'
+ import Footer from '@/components/Footer.vue';
  import { ref } from 'vue';
 export default {
   setup() {
@@ -680,7 +680,8 @@ export default {
   components:{
     SideBarVue,
     ImageGallery,
-    TopNav
+    TopNav,
+    Footer
   }
 }
 </script>
