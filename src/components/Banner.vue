@@ -83,7 +83,7 @@ sm="4"
                   INEC
                 </v-card-title>
 
-                <v-card-subtitle>Independent National Electoral Commission</v-card-subtitle>
+                <v-card-subtitle>Your vote counts !</v-card-subtitle>
 
                 <v-card-actions>
                   <v-btn
@@ -114,7 +114,7 @@ sm="4"
             <div class="d-flex flex-no-wrap justify-space-between">
               <div>
                 <v-card-title class="text-h5">
-                  Fast fingerprint matching
+                  Fast matching
                 </v-card-title>
 
                 <v-card-subtitle>Biometric data enrollment</v-card-subtitle>
