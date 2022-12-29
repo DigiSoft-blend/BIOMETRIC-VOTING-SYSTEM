@@ -22,11 +22,15 @@
               class="mb-4"
               contain
               height="128"
-              src="/user (1).png"
+              src="/id.png"
             ></v-img>
           <v-card-text>
             <v-text-field
-              label="Voters Email"
+              label="User name"
+              type="text"
+            ></v-text-field>
+            <v-text-field
+              label="Voters email"
               placeholder="john@google.com"
             ></v-text-field>
             <span class="text-caption text-grey-darken-1">
@@ -40,24 +44,69 @@
               class="mb-4"
               contain
               height="128"
-              src="/user (1).png"
+              src="/id.png"
             ></v-img>
           <v-card-text>
             <v-text-field
-              label="Password"
-              type="password"
+              label="Date of birth"
+              type="text"
             ></v-text-field>
             <v-text-field
-              label="Confirm Password"
+              label="Gender"
               type="password"
             ></v-text-field>
             <span class="text-caption text-grey-darken-1">
-              Please enter a password for your voters account
+              Please enter this information for proper identification
+            </span>
+          </v-card-text>
+        </v-window-item>
+
+        <v-window-item :value="3">
+          <v-img
+              class="mb-4"
+              contain
+              height="128"
+              src="/id.png"
+            ></v-img>
+          <v-card-text>
+            <v-text-field
+              label="State"
+              type="text"
+            ></v-text-field>
+            <v-text-field
+              label="Senatorial district"
+              type="text"
+            ></v-text-field>
+            <span class="text-caption text-grey-darken-1">
+              Please enter this information for proper identification
+            </span>
+          </v-card-text>
+        </v-window-item>
+
+        <v-window-item :value="4">
+          <v-img
+              class="mb-4"
+              contain
+              height="128"
+              src="/id.png"
+            ></v-img>
+          <v-card-text>
+            <v-text-field
+              label="Occupation"
+              type="text"
+            ></v-text-field>
+            <v-text-field
+              label="Phone number"
+              type="text"
+            ></v-text-field>
+            <span class="text-caption text-grey-darken-1">
+              Please enter this information for proper identification
             </span>
           </v-card-text>
         </v-window-item>
   
-        <v-window-item :value="3">
+  
+        <v-window-item :value="5">
           <div class="pa-4 text-center">
             <v-img
               class="mb-4"
@@ -66,12 +115,21 @@
               src="/checked (1).png"
             ></v-img>
             <h3 class="text-h6 font-weight-light mb-2">
-              Registration Successful
+              Registration in progress
             </h3>
-            <span class="text-caption text-grey">Congratulations!</span>
+            <span class="text-caption text-grey">We are getting your credentials ready...</span>
+
+            <v-progress-linear
+            color="deep-purple-accent-1"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
           </div>
         </v-window-item>
       </v-window>
+
+      
   
       <v-divider></v-divider>
   
@@ -86,7 +144,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <v-btn
-          v-if="step < 3"
+          v-if="step < 5"
           color="primary"
           variant="flat"
           @click="step++"
@@ -112,7 +170,9 @@ import TopNav from '@/components/TopNav.vue'
         const currentTitle = (step:any) => {
             switch (step) {
             case 1: return 'Sign up to get your voters token'
-            case 2: return 'Create a password'
+            case 2: return 'More about yourself'
+            case 3: return 'More about yourself'
+            case 4: return 'More about yourself'
             // default: return 'Account created'
             }
         }
