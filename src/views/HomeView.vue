@@ -53,8 +53,10 @@ export default {
 </script>
 <style scoped>
   .home-hero {
-    background: url('/pexels-scott-webb-593158.jpg');
+    /* background: url('/pexels-scott-webb-593158.jpg'); */
+    background: url('/istockphoto-1202620313-612x612.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     box-shadow: inset 0 0 0 1000px #010101c1;

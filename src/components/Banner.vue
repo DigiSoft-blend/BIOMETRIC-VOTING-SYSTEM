@@ -26,7 +26,7 @@
           <h1 class="text-white">
             Biometric Voting System
           </h1>
-          <p class="text-bold text-white">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</p>
+          <p class="text-bold text-white"> The solution is intended for national-scale projects, like biometric voter registration with records deduplication, passport issuing and border control.</p>
         </div>
 
         <router-link to="/registration" class="link">
@@ -133,7 +133,7 @@ sm="4"
                 size="100"
                 rounded="0"
               >
-                <v-img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"></v-img>
+                <v-img src="/fingerprint.jpg"></v-img>
               </v-avatar>
             </div>
 
