@@ -26,7 +26,7 @@
           <h1 class="text-white">
             Biometric Voting System
           </h1>
-          <p class="text-bold text-white"> The solution is intended for national-scale projects, like biometric voter registration with records deduplication, passport issuing and border control.</p>
+          <p class="text-bold text-white"> The solution is intended for national-scale projects, like biometric voter registration with records deduplication, passport issuing and election control within Nigeria.</p>
         </div>
 
         <router-link to="/registration" class="link">
@@ -60,14 +60,14 @@ sm="4"
             class="mt-4"
           >
             <v-card-title class="text-h5">
-              Unlimited music now
+              Fingerprint modalities supported
             </v-card-title>
 
-            <v-card-subtitle>Listen to your favorite artists and albums whenever and wherever, online and offline.</v-card-subtitle>
+            <v-card-subtitle>BVS provides a solution for large-scale biometric identification systems.</v-card-subtitle>
 
             <v-card-actions>
               <v-btn variant="text">
-                Listen Now
+                Register to get a token Now
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -79,11 +79,11 @@ sm="4"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
               <div>
-                <v-card-title class="text-h5">
-                  Supermodel
+                <v-card-title class="p">
+                  INEC
                 </v-card-title>
 
-                <v-card-subtitle>Foster the People</v-card-subtitle>
+                <v-card-subtitle>Independent National Electoral Commission</v-card-subtitle>
 
                 <v-card-actions>
                   <v-btn
@@ -91,7 +91,7 @@ sm="4"
                     variant="outlined"
                     size="small"
                   >
-                    START RADIO
+                    Learn More
                   </v-btn>
                 </v-card-actions>
               </div>
@@ -101,7 +101,7 @@ sm="4"
                 size="100"
                 rounded="0"
               >
-                <v-img src="/logo_size.jpg"></v-img>
+                <v-img src="/Coat_of_arms_of_Nigeria.svg"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -114,10 +114,10 @@ sm="4"
             <div class="d-flex flex-no-wrap justify-space-between">
               <div>
                 <v-card-title class="text-h5">
-                  Halcyon Days
+                  Fast fingerprint matching
                 </v-card-title>
 
-                <v-card-subtitle>Ellie Goulding</v-card-subtitle>
+                <v-card-subtitle>Biometric data enrollment</v-card-subtitle>
 
                 <v-card-actions>
                   <v-btn
