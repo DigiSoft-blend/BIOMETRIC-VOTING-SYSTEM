@@ -226,7 +226,7 @@ import { notify } from "@kyvg/vue3-notification";
         }
 
         onMounted(()=> {
-         
+          counter.loadtUsers()
         })
         
       
