@@ -40,8 +40,7 @@
           start
           icon="mdi-cloud-upload"
         ></v-icon>
-
-            Get Sterted
+            Register Now  {{ Count }}
            </v-btn>
         </router-link>
       
@@ -161,6 +160,31 @@ sm="4"
   </v-col>
  </v-row>  
 </template>
+
+
+<script lang="ts">
+
+  import { useCounterStore } from '@/stores/counter'
+  import { computed, onMounted, ref } from 'vue'
+
+export default {
+  setup() {
+    const counter = useCounterStore()
+    const Count = ref(0)
+    Count.value = counter.count
+
+    const users = () => {
+         counter.loadtUsers()
+    }
+
+    onMounted(()=>{
+       users()
+    })
+
+    return { Count }
+  },
+}
+</script>
 
 <style scoped>
      .link{

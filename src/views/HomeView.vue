@@ -1,6 +1,7 @@
 <template>
   <!-- <TopNav/> -->
   <VMain>
+   
     <Banner/>
   </VMain>
   <RowContent1/>
@@ -18,6 +19,8 @@
  import RowContent1 from '@/components/RowContent1.vue';
  import RowContent2 from '@/components/RowContent2.vue';
  import { ref } from 'vue';
+ 
+
 export default {
   setup() {
 
@@ -36,7 +39,8 @@ export default {
           'Fourth',
           'Fifth',
         ])   
-
+  
+       
  
   return {colors, slides}      
    
