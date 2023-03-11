@@ -58,7 +58,7 @@
         >
           <v-text-field
             v-model="dob"
-            :rules="nameRules"
+            :rules="dobRules"
             label="Data of birth"
             required
           ></v-text-field>
@@ -75,7 +75,7 @@
         >
           <v-text-field
             v-model="gender"
-            :rules="nameRules"
+            :rules="genderRules"
             label="Gender"
             required
           ></v-text-field>
@@ -87,7 +87,7 @@
         >
           <v-text-field
             v-model="state"
-            :rules="nameRules"
+            :rules="stateRules"
             label="State"
             required
           ></v-text-field>
@@ -99,7 +99,7 @@
         >
           <v-text-field
             v-model="senatorialdistrict"
-            :rules="nameRules"
+            :rules="sdistrictRules"
             label="Senatorial District"
             required
           ></v-text-field>
@@ -115,7 +115,7 @@
         >
           <v-text-field
             v-model="occupation"
-            :rules="nameRules"
+            :rules="occupationRules"
             label="Occupation"
             required
           ></v-text-field>
@@ -127,7 +127,7 @@
         >
           <v-text-field
             v-model="phonenumber"
-            :rules="nameRules"
+            :rules="phoneRules"
             label="Phone number"
             required
           ></v-text-field>
@@ -187,13 +187,42 @@ import { notify } from "@kyvg/vue3-notification";
 
         const nameRules = ref([
          (v: any) => !!v || 'Name is required',
-        (v: any) => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        (v: any) => (v && v.length <= 40) || 'Name must be less than 10 characters',
         ])
         
        const emailRules = ref([
         (v: any) => !!v || 'E-mail is required',
         (v: any) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
        ])
+
+       const dobRules = ref([
+        (v: any) => !!v || 'Date of birth is required',
+       ])
+
+
+       const genderRules = ref([
+        (v: any) => !!v || 'Gender is required',
+       ])
+
+       const stateRules = ref([
+        (v: any) => !!v || 'State is required',
+        (v: any) => (v && v.length <= 10) || 'State must be less than 30 characters',
+       ])
+
+       const sdistrictRules = ref([
+         (v: any) => !!v || 'Senatorial district is required',
+        (v: any) => (v && v.length <= 11) || 'Senatorial district must be less than 30 characters',
+        ])
+
+       const occupationRules = ref([
+         (v: any) => !!v || 'Occupation is required',
+        (v: any) => (v && v.length <= 11) || 'Occupation must be less than 20 characters',
+        ])
+
+       const phoneRules = ref([
+         (v: any) => !!v || 'Phone number is required',
+        (v: any) => (v && v.length <= 11) || 'Phone number must be less than 12 characters',
+        ])
 
        const loader = computed(()=>counter.fromRegLoad)
        const formError = computed(()=>counter.formErrorFlag1)
@@ -245,7 +274,13 @@ import { notify } from "@kyvg/vue3-notification";
           emailRules,
           step,
           loader,
-          formError
+          formError,
+          phoneRules,
+          occupationRules,
+          sdistrictRules,
+          stateRules,
+          genderRules,
+          dobRules
         }
     },
     components: {

@@ -174,6 +174,7 @@ export default {
     Count.value = counter.count
 
     const users = () => {
+         counter.formErrorFlag1 = false
          counter.loadtUsers()
     }
 

@@ -1,7 +1,6 @@
 
 import { defineStore } from 'pinia'
-//import http from "@/http-common";
-import axios from "axios";
+import http from "@/http-common";
 
 
 export const useCounterStore = defineStore('counter', {
@@ -26,7 +25,7 @@ actions: {
     this.count--
   },
   loadtUsers(){
-    axios.get("http://sundaymba2-001-site1.atempurl.com/api/Users").then(response => {
+    http.get("/Users").then(response => {
       const res = response.data
       console.log(res) 
       })
@@ -40,7 +39,7 @@ actions: {
     this.fromRegLoad = true
     this.formErrorFlag1 = false
     return new Promise(( resolve, reject) => { 
-    axios.post("http://sundaymba2-001-site1.atempurl.com/api/Users", {} , { params:{
+    http.post("/Users", {} , { params:{
           Dob: credentials.dob,
           Email: credentials.email,
           state: credentials.state,
