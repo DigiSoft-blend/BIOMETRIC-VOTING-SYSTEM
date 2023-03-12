@@ -24,12 +24,16 @@
           cols="12"
           md="12"
         >
+       
         <v-img
               class=""
               contain
               height="128"
               src="/submit.png"
             ></v-img>
+
+            <h5 class="text-center"  color="secondary">Fill in the form to begine your BVS Registration process</h5>
+            <v-spacer></v-spacer>
            
           <v-text-field
             v-model="username"

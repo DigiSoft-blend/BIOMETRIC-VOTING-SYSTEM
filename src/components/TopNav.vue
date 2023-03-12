@@ -9,7 +9,7 @@
           ></v-img>
         </template>
 
-       
+      
         <template v-slot:append>
           <v-app-bar-nav-icon @click="drawer = true"
            class="d-flex d-sm-none"
@@ -29,12 +29,14 @@
         </template>
        
         
+      
          <v-list-item
             prepend-avatar="/logo_size.jpg"
+            @click="adminReg"
           >
            <span class="d-none d-sm-flex">Biometric Voting System</span> 
         </v-list-item>
-       
+      
         
         <v-spacer></v-spacer>
 
@@ -72,11 +74,20 @@
 
   <script lang="ts">
   import { ref } from 'vue';
+import router from '@/router';
   export default {
     setup(){
       const drawer = ref(false)
       const tab = ref(null)
-      return {drawer,tab}
+
+      const adminReg = () => {
+        router.push('/adminlogin')
+      }
+      return {
+        drawer,
+        tab,
+        adminReg
+      }
     }
     // el: '#app',
     // data () {

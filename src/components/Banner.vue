@@ -173,13 +173,12 @@ export default {
     const Count = ref(0)
     Count.value = counter.count
 
-    const users = () => {
+    const reset = () => {
          counter.formErrorFlag1 = false
-         counter.loadtUsers()
     }
 
     onMounted(()=>{
-       users()
+       reset()
     })
 
     return { Count }
