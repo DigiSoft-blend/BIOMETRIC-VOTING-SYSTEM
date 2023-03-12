@@ -85,7 +85,7 @@
      <template>
      <notifications position="bottom left" closeOnClick=true width="300" ignoreDuplicates=true duration=5000 />
      <v-form @submit="Submit" class="margin-top">
-        <div class="py-4">
+        <div class="pa-4">
       
           <v-card
             class="mx-auto pa-12 pb-8"
