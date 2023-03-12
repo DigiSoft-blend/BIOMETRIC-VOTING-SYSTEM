@@ -4,7 +4,7 @@
 </template> -->
 <template>
   <v-row>   
-    <v-col cols="10" class="mx-auto">  
+    <v-col cols="11" class="mx-auto">  
     <v-row no-gutters style="margin-top:100px;">
       <v-col>
         <v-sheet class="pa-2 ma-2 border">
