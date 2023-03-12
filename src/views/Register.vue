@@ -141,8 +141,7 @@
       
   
          <v-progress-linear
-            color="deep-purple-accent-4"
-            rounded
+           
             :active="loader"
             :indeterminate="loader"
             height="6"
@@ -152,9 +151,16 @@
        
         <v-spacer></v-spacer>
        
-        <v-btn type="submit" block color="primary" variant="flat" class="rounded-pill">
-          Submit
-        </v-btn>
+        <v-btn
+              block
+              class="mb-8"
+              color="blue"
+              size="large"
+              variant="tonal"
+              type="submit"
+            >
+             Submit
+          </v-btn>
       </v-card-actions>
       
     </v-form> 
