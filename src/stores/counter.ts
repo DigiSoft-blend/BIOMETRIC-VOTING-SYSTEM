@@ -76,7 +76,7 @@ actions: {
 
   submitAdminLoginCred(credentials : any){
     this.fromRegLoad = true
-    this.formErrorFlag1 = false
+    //this.formErrorFlag1 = false
     return new Promise(( resolve, reject) => { 
     http.post("/Account/login", {} , { params:{
           password: credentials.password,
@@ -91,7 +91,7 @@ actions: {
         })
         .catch(error => {
          this.fromRegLoad = false
-         this.formErrorFlag1 = true
+        // this.formErrorFlag1 = true
         const err = error.response.data.errors
         reject(error) 
         }) 

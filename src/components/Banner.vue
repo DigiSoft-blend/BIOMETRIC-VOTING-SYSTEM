@@ -40,7 +40,7 @@
           start
           icon="mdi-cloud-upload"
         ></v-icon>
-            Register Now  {{ Count }}
+            Register Now  
            </v-btn>
         </router-link>
       

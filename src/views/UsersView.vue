@@ -4,11 +4,10 @@
 </template> -->
 <template>
   <notifications position="bottom left" closeOnClick=true width="300" ignoreDuplicates=true duration=5000 />
-<v-row>   
- <v-col cols="12" class="mx-auto">  
-  <v-row no-gutters style="margin-top:50px;">
-  <v-container>
-   <v-col>
+
+ <v-container class="mx-auto">  
+  <v-row  style="margin-top:50px;">
+   <v-col cols="12">
     <v-card :loading=loader >
     <v-sheet class="" >
     <v-banner
@@ -26,7 +25,10 @@
       </v-banner-text>
   
       <v-banner-actions>
-        <v-btn variant="tonal" color="success" @click="reLoad">Reload</v-btn>
+        <v-btn variant="tonal" color="success" class="me-4" @click="reLoad">Reload</v-btn>
+      <router-link to="/searchusers" class="link">
+        <v-btn variant="tonal" color="success" > Search User</v-btn>
+      </router-link>
       </v-banner-actions>
     </v-banner>
     <v-table
@@ -76,14 +78,10 @@
    </v-sheet>
   </v-card>
   </v-col>
-  </v-container>  
 </v-row>
-
-     
- </v-col>
+</v-container>
       <AdminSideBar></AdminSideBar>
-  </v-row>    
-  </template>
+</template>
       
       
   <script lang="ts">
@@ -159,6 +157,11 @@
   
   .mt{
     margin-top: 70px;
+  }
+
+  .link{
+    text-decoration: none;
+    color: inherit;
   }
   
   </style>
