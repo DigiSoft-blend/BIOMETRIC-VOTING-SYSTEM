@@ -10,10 +10,15 @@ state: () => ({
   count: 5,
   name: "Silas Udofia" ,
   users: "",
+  user: "",
   fromRegLoad: false,
+  updatUserLoader: false,
   formErrorFlag1: false,
   userLoader: false,
-  userRegistered: []
+  userRegistered: [],
+  token:"",
+  tokenLoader: false,
+  tokenValid: false
 }),
 
 
@@ -24,6 +29,25 @@ actions: {
   },
   decrement() {
     this.count--
+  },
+
+  loadSingleUsers(id: any){
+    this.userLoader = true
+    return new Promise(( resolve, reject) => {  
+    http.get("/Users/"+id).then(response => {
+      const res = response.data
+      this.user = res
+      this.userLoader = false
+      console.log(this.user)
+      resolve(response) 
+      })
+      .catch(error => {
+      const err = error.response.data
+      console.log(err)
+      this.userLoader = false
+      reject(error) 
+      })
+    }) 
   },
 
   loadtUsers(){
@@ -74,6 +98,35 @@ actions: {
       })   
   },
 
+  updateVotersCred(id: any, credentials : any){
+    this.updatUserLoader = true
+    return new Promise(( resolve, reject) => { 
+    http.put("/Users/"+id, {} , { params:{
+          Dob: credentials.dob,
+          Email: credentials.email,
+          state: credentials.state,
+          username: credentials.username,
+          occupation: credentials.occupation,
+          phonenumber: credentials.phonenumber,
+          senatorialdistrict: credentials.senatorialdistrict,
+          gender: credentials.gender,
+      }},
+      ).then(response => {
+        const res = response.data
+        this.updatUserLoader = false
+        console.log(this.userRegistered) 
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data.errors
+        this.updatUserLoader = false
+        reject(error) 
+        }) 
+      })   
+  },
+
+  
+
   submitAdminLoginCred(credentials : any){
     this.fromRegLoad = true
     //this.formErrorFlag1 = false
@@ -97,7 +150,46 @@ actions: {
         }) 
       })   
   },
+
+
+  generateToken(username : any){
+    this.tokenLoader = true
+    return new Promise(( resolve, reject) => { 
+    http.get("/Token/GetTokenByName/"+username
+      ).then(response => {
+        const res = response.data.value
+        this.token = res
+        this.tokenLoader = false
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data.errors
+        this.tokenLoader = false
+        reject(error) 
+        }) 
+      })   
+  },
+
+  verifyToken(token : any){
+    this.tokenLoader = true
+    return new Promise(( resolve, reject) => { 
+    http.get("/Token/verify/"+token
+      ).then(response => {
+        const res = response.data
+        this.tokenValid = res
+        this.tokenLoader = false
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data.errors
+        this.tokenLoader = false
+        reject(error) 
+        }) 
+      })   
+  },
 },
+
+
 
 //getters
 getters:{

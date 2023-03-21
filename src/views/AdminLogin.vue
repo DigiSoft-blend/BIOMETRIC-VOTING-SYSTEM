@@ -205,7 +205,7 @@
                email: email.value,
                password: password.value,
               }
-              counter.submitAdminLoginCred(payload).then(()=> {
+              counter.submitAdminLoginCred(payload).then((response)=> {
                    router.push("/admindashboard")
                   }).catch(error => {
                     notify({

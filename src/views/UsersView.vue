@@ -33,7 +33,7 @@
     </v-banner>
     <v-table
   
-    height="400px"
+    height="440px"
   >
     <thead>
       <tr>

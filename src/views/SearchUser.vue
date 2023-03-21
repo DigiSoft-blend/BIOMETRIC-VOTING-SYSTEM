@@ -48,13 +48,15 @@
             </v-avatar>
           </template>
   
-          <v-list-item-title
+         <router-link :to="{ name: 'user', params: { id : item.id }}">  
+         <v-list-item-title
             class="text-uppercase font-weight-regular text-caption"
             v-text="item.userName +''+' ('+ item.email +')'"  
           ></v-list-item-title>
-         
           <div v-text="item.state  +''+' ('+ 'senatorial district: ' + item.senatorialDistrict +')'"></div>
+        </router-link>
         </v-list-item>
+      
       </v-list>
     </v-card>  
     </v-container-fluid>
