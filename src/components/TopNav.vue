@@ -22,9 +22,8 @@
               class="d-none d-sm-flex"
             >
             <router-link to="/" class="link"><v-tab>Home</v-tab></router-link>
-            <router-link to="/registration" class="link"><v-tab>Register</v-tab></router-link>
-              <v-tab>News</v-tab>
-              <v-tab>Help</v-tab>
+            <!-- <router-link to="/registration" class="link"><v-tab>Register</v-tab></router-link> -->
+              <v-tab>About</v-tab>
          </v-tabs>
         </template>
        
@@ -61,9 +60,9 @@
           <!-- <v-list-item-group > -->
             <v-list density="compact" nav>
               <router-link to="/" class="link"><v-list-item prepend-icon="mdi-home" title="Home" value="home"></v-list-item></router-link>
-              <router-link to="/registration" class="link"><v-list-item prepend-icon="mdi-account" title="Register" value="register"></v-list-item></router-link>
-              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-earth" title="News" value="News"></v-list-item></router-link>
-              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-help" title="Help" value="Help"></v-list-item></router-link>
+              <!-- <router-link to="/registration" class="link"><v-list-item prepend-icon="mdi-account" title="Register" value="register"></v-list-item></router-link> -->
+              <router-link to="/" class="link"><v-list-item prepend-icon="mdi-earth" title="About" value="About"></v-list-item></router-link>
+              <!-- <router-link to="/" class="link"><v-list-item prepend-icon="mdi-help" title="Help" value="Help"></v-list-item></router-link> -->
             </v-list>
             
         <!-- </v-list-item-group> -->

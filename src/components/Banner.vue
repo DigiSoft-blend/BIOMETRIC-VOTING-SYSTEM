@@ -24,12 +24,18 @@
          class="mx-auto pa-4"
         >
           <h1 class="text-white">
-            Biometric Voting System
+            Welcome to BVS – the ultimate solution for secure and reliable voting!
           </h1>
-          <p class="text-bold text-white"> The solution is intended for national-scale projects, like biometric voter registration with records deduplication, passport issuing and election control within Nigeria.</p>
+          <!-- <p class="text-bold text-white"> 
+            BVS is a revolutionary biometric voting system that combines cutting-edge biometric and GPS technologies to ensure that your vote is cast and counted accurately, securely, and without any possibility of fraud. Our system is designed to eliminate all the traditional problems associated with voting, such as vote rigging, duplicate voting, and tampering with ballot papers.
+            Sign up for BVS today and experience the future of secure and reliable voting!
+          </p> -->
+          <!-- <p  class="text-bold text-white mt-4">
+            BVS — 2023
+          </p> -->
         </div>
 
-        <router-link to="/registration" class="link">
+        <!-- <router-link to="/registration" class="link">
           <v-btn
             variant="flat"
             color="secondary"
@@ -42,7 +48,7 @@
         ></v-icon>
             Register Now  
            </v-btn>
-        </router-link>
+        </router-link> -->
       
         </v-col>
      
@@ -79,7 +85,7 @@ sm="4"
             <div class="d-flex flex-no-wrap justify-space-between">
               <div>
                 <v-card-title class="p">
-                  INEC
+                  BVS
                 </v-card-title>
 
                 <v-card-subtitle>Your vote counts !</v-card-subtitle>
@@ -119,11 +125,11 @@ sm="4"
                 <v-card-subtitle>Biometric data enrollment</v-card-subtitle>
 
                 <v-card-actions>
-                  <v-btn
+                  <!-- <v-btn
                     class="ml-2"
                     icon="mdi-play"
                     variant="text"
-                  ></v-btn>
+                  ></v-btn> -->
                 </v-card-actions>
               </div>
 
@@ -138,7 +144,7 @@ sm="4"
 
             <v-divider></v-divider>
 
-    <v-card-actions class="pa-4">
+    <!-- <v-card-actions class="pa-4">
       Rate this App
 
       <v-spacer></v-spacer>
@@ -155,7 +161,7 @@ sm="4"
         hover
         size="18"
       ></v-rating>
-    </v-card-actions>
+    </v-card-actions> -->
           </v-card>   
   </v-col>
  </v-row>  

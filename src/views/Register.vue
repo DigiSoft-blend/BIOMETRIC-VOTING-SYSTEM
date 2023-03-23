@@ -32,7 +32,7 @@
               src="/submit.png"
             ></v-img>
 
-            <h5 class="text-center"  color="secondary">Fill in the form to begine your BVS Registration process</h5>
+            <h5 class="text-center"  color="secondary">Fill in the form to begin your BVS Registration process</h5>
             <v-spacer></v-spacer>
            
           <v-text-field
@@ -63,7 +63,7 @@
           <v-text-field
             v-model="dob"
             :rules="dobRules"
-            label="Data of birth"
+            label="Date of birth"
             required
           ></v-text-field>
         </v-col>

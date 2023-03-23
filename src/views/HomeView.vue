@@ -5,7 +5,7 @@
     <Banner/>
   </VMain>
   <RowContent1/>
-  <RowContent2/>
+  <!-- <RowContent2/> -->
   <Footer/>
 
 </template>
