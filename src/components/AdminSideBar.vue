@@ -34,8 +34,11 @@
           <router-link to="/admindashboard">
             <v-list-item prepend-icon="mdi-home" title="Home" value="home"></v-list-item>
           </router-link> 
-            <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-            <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+          <router-link to="/registration">
+            <v-list-item prepend-icon="mdi-account" title="Registration" value="Register"></v-list-item>
+          </router-link>
+            <!-- <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
+            <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item> -->
           </v-list>
         </v-navigation-drawer>
         <v-main style="height: 100vh"></v-main>

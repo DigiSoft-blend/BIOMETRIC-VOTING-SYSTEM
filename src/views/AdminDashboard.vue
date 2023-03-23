@@ -69,29 +69,6 @@
     </template>
 
     <v-banner-text>
-     <h2>Tokens</h2>
-      Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
-    </v-banner-text>
-
-    <v-banner-actions>
-      <v-btn variant="tonal" color="success">Tokens Interface</v-btn>
-    </v-banner-actions>
-  </v-banner>
-
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class="pa-2 ma-2 border">
-            <v-banner
-    color="pink-darken-1"
-    icon="mdi-lock"
-    lines="two"
-  >
-    <template v-slot:prepend>
-      <v-avatar></v-avatar>
-    </template>
-
-    <v-banner-text>
     <h2>Users</h2>
       Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
     </v-banner-text>
