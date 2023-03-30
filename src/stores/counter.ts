@@ -20,7 +20,8 @@ state: () => ({
   tokenLoader: false,
   tokenValid: false,
   aspirants: "",
-  aspLoader: false
+  aspLoader: false,
+  voteCount: 0
 }),
 
 
@@ -194,7 +195,7 @@ actions: {
   loadtAspirants(){
     this.aspLoader = true
     return new Promise(( resolve, reject) => {  
-    http.get("/Aspirants").then(response => {
+    http.get("/VoteCount").then(response => {
       const res = response.data
       this.aspirants = res
       this.aspLoader = false
@@ -204,6 +205,21 @@ actions: {
       const err = error.response.data
       console.log(err)
       this.aspLoader = false
+      reject(error) 
+      })
+    }) 
+  },
+
+  loadtVoteCount(id : any){
+    return new Promise(( resolve, reject) => {  
+    http.get("/VoteCount/"+id).then(response => {
+      const res = response.data
+      this.voteCount = res
+      resolve(response) 
+      })
+      .catch(error => {
+      const err = error.response.data
+      console.log(err)
       reject(error) 
       })
     }) 

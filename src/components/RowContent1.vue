@@ -3,181 +3,59 @@
    <v-row gutters>
     <v-col
         cols="12"
-        sm="5"
+        md="7"
+        class="mx-auto"
       >
 
       <v-card
         v-for="asp in aspirants" :key=asp.id
             color="dark"
-            theme="dark"
+            theme="light"
             class="mb-4"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
               <div class="border">
+                
                 <v-card-title class="text-h5">
-                  {{ asp.userName }}
+                  {{ asp.aspirantName }}
                 </v-card-title>
 
-                <v-card-subtitle>Aspiring For {{ asp.role }}</v-card-subtitle>
-
+                <v-card-subtitle>{{ asp.aspirantRole }}</v-card-subtitle>
+                <v-card-subtitle>{{ asp.state }}</v-card-subtitle>
+                
                 <v-card-actions>
-                  <v-btn
-                    class="ms-2"
-                    variant="outlined"
-                    size="small"
-                  >
-                   Vote
-                  </v-btn>
-    <v-avatar color="info" size="x-large" class="mx-5">
-      64
-    </v-avatar>
+                
+    <!-- <v-avatar color="info" size="x-large" class="mx-5">
+     
+    </v-avatar> -->
+    <h3 class="ms-2">Votes: {{ asp.aspirantVoteCount }}</h3>
+    <!-- {{ asp.aspirantVoteCount }} -->
                 </v-card-actions>
               </div>
-              
               <v-avatar
                 class="ma-3"
-               
-                rounded="0"
+                size="50"
+                rounded="50"
               >
                 <v-img src="/Untitled-design.png"></v-img>
               </v-avatar>
 
               <v-avatar
                 class="ma-3"
-                size="125"
+                size="70"
                 rounded="0"
               >
                 <v-img src="/user (2).png"></v-img>
               </v-avatar>
-
+             
             </div>
+            
           </v-card>
 
-<!-- <v-card
-    v-for="asp in aspirants" :key=asp.id
-    class="mx-auto mb-3"
-    max-width="300"
-    max-height="200"
-    rounded="0"
-  >
-    <v-img
-      height="100%"
-      cover
-      src="/istockphoto-1202620313-612x612.jpg"
-    >
-      <v-avatar
-        color="blue"
-        size="150"
-        rounded="0"
-      >
-        <v-img cover src="/user (2).png"></v-img>
-      </v-avatar>
-
-
-    <v-avatar color="info" size="x-large" class="mx-5">
-      64
-    </v-avatar>
-  
-      <v-list-item
-        class="text-white"
-        :title= asp.userName
-        :subtitle= asp.role 
-      >
-    </v-list-item>
-    </v-img>
-  </v-card> -->
 
 
       
-      <!-- <v-expansion-panels variant="popout" class="pa-4 d-none d-sm-flex">
-    <v-expansion-panel
-      v-for="(message, i) in messages"
-      :key="i"
-      hide-actions
-    >
-      <v-expansion-panel-title>
-        <v-row
-          align="center"
-          class="spacer"
-          no-gutters
-        >
-          <v-col
-            cols="4"
-            sm="2"
-            md="1"
-          >
-            <v-avatar
-              size="36px"
-            >
-              <v-img
-                v-if="message.avatar"
-                alt="Avatar"
-                src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
-              ></v-img>
-              <v-icon
-                v-else
-                :color="message.color"
-                :icon="message.icon"
-              ></v-icon>
-            </v-avatar>
-          </v-col>
-
-
-          
-
-          <v-col
-            class="hidden-xs-only text-left ml-2"
-            sm="5"
-            md="3"
-          >
-            <strong v-html="message.name"></strong>
-            <span
-              v-if="message.total"
-              class="text-grey"
-            >
-              &nbsp;({{ message.total }})
-            </span>
-          </v-col>
-
-          <v-col
-            class="text-no-wrap text-left"
-            cols="5"
-            sm="3"
-          >
-            <v-chip
-              v-if="message.new"
-              :color="`${message.color}-lighten-1`"
-              class="ml-0 mr-2"
-              label
-              small
-            >
-              {{ message.new }} new
-            </v-chip>
-            <strong v-html="message.title"></strong>
-          </v-col>
-
-
-          
-
-          <v-col
-            v-if="message.excerpt"
-            class="text-medium-emphasis text-truncate hidden-sm-and-down"
-          >
-            &mdash;
-            {{ message.excerpt }}
-          </v-col>
-        </v-row>
-      </v-expansion-panel-title>
-
-      <v-expansion-panel-text>
-        <v-card-text v-text="lorem"></v-card-text>
-      </v-expansion-panel-text>
-
-      <v-expansion-panel-text>
-        <v-card-text v-text="lorem"></v-card-text>
-      </v-expansion-panel-text>
-    </v-expansion-panel>
-  </v-expansion-panels> -->
+  
       </v-col>
     </v-row>
   </v-container> 
@@ -256,17 +134,31 @@ export default {
     const counter = useCounterStore()
   
      const aspirants = computed(()=>counter.aspirants)
+     
+     const  uservotecount = (id :any) => {
+      counter.loadtVoteCount(id)
+      const count = computed(()=>counter.voteCount)
+      return count
+     }
 
     onMounted(()=>{
        counter.loadtAspirants()
+      //  counter.loadtVoteCount("silas")
     })
 
       
-      return {messages, lorem, aspirants}      
+      return {
+        messages,
+        lorem, 
+        aspirants,
+        uservotecount
+      }      
     },
 }
 </script>
 
 <style scoped>
-  
+  .c-white{
+    color: white;
+  }
 </style>
