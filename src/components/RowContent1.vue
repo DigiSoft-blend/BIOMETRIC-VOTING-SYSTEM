@@ -5,37 +5,91 @@
         cols="12"
         sm="5"
       >
+
       <v-card
-    class="mx-auto"
-    max-width="100vw"
-      >
-    
-    <v-list
-      :items="items"
-      item-props
-      lines="three"
+        v-for="asp in aspirants" :key=asp.id
+            color="dark"
+            theme="dark"
+            class="mb-4"
+          >
+            <div class="d-flex flex-no-wrap justify-space-between">
+              <div class="border">
+                <v-card-title class="text-h5">
+                  {{ asp.userName }}
+                </v-card-title>
+
+                <v-card-subtitle>Aspiring For {{ asp.role }}</v-card-subtitle>
+
+                <v-card-actions>
+                  <v-btn
+                    class="ms-2"
+                    variant="outlined"
+                    size="small"
+                  >
+                   Vote
+                  </v-btn>
+    <v-avatar color="info" size="x-large" class="mx-5">
+      64
+    </v-avatar>
+                </v-card-actions>
+              </div>
+              
+              <v-avatar
+                class="ma-3"
+               
+                rounded="0"
+              >
+                <v-img src="/Untitled-design.png"></v-img>
+              </v-avatar>
+
+              <v-avatar
+                class="ma-3"
+                size="125"
+                rounded="0"
+              >
+                <v-img src="/user (2).png"></v-img>
+              </v-avatar>
+
+            </div>
+          </v-card>
+
+<!-- <v-card
+    v-for="asp in aspirants" :key=asp.id
+    class="mx-auto mb-3"
+    max-width="300"
+    max-height="200"
+    rounded="0"
+  >
+    <v-img
+      height="100%"
+      cover
+      src="/istockphoto-1202620313-612x612.jpg"
     >
-      <template v-slot:subtitle="{ subtitle }">
-        <div v-html="subtitle"></div>
-      </template>
-    </v-list>
-  </v-card>
-      </v-col>
-
-
-
-
-
-
-
-
-
-
-      <v-col
-        cols="12"
-        sm="7"
+      <v-avatar
+        color="blue"
+        size="150"
+        rounded="0"
       >
-      <v-expansion-panels variant="popout" class="pa-4 d-none d-sm-flex">
+        <v-img cover src="/user (2).png"></v-img>
+      </v-avatar>
+
+
+    <v-avatar color="info" size="x-large" class="mx-5">
+      64
+    </v-avatar>
+  
+      <v-list-item
+        class="text-white"
+        :title= asp.userName
+        :subtitle= asp.role 
+      >
+    </v-list-item>
+    </v-img>
+  </v-card> -->
+
+
+      
+      <!-- <v-expansion-panels variant="popout" class="pa-4 d-none d-sm-flex">
     <v-expansion-panel
       v-for="(message, i) in messages"
       :key="i"
@@ -123,7 +177,7 @@
         <v-card-text v-text="lorem"></v-card-text>
       </v-expansion-panel-text>
     </v-expansion-panel>
-  </v-expansion-panels>
+  </v-expansion-panels> -->
       </v-col>
     </v-row>
   </v-container> 
@@ -131,41 +185,42 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
+import { useCounterStore } from '@/stores/counter'
+import { computed, onMounted, ref } from 'vue'
 export default {
     setup() {
-        const items = ref([
- { type: 'subheader', title: 'Aspirants' },
-        {
-          prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-          title: 'Brunch this weekend?',
-          subtitle: `<span class="text-primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-        },
-        { type: 'divider', inset: true },
-        {
-          prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          title: 'Summer BBQ',
-          subtitle: `<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
-        },
-        { type: 'divider', inset: true },
-        {
-          prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-          title: 'Oui oui',
-          subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-        },
-        { type: 'divider', inset: true },
-        {
-          prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-          title: 'Birthday gift',
-          subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-        },
-        { type: 'divider', inset: true },
-        {
-          prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-          title: 'Recipe to try',
-          subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-        },
-        ])    
+      //   const items = ref([
+      //  { type: 'subheader', title: 'Aspirants' },
+      //   {
+      //     prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+      //     title: 'Brunch this weekend?',
+      //     subtitle: `<span class="text-primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+      //   },
+      //   { type: 'divider', inset: true },
+      //   {
+      //     prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+      //     title: 'Summer BBQ',
+      //     subtitle: `<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+      //   },
+      //   { type: 'divider', inset: true },
+      //   {
+      //     prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+      //     title: 'Oui oui',
+      //     subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+      //   },
+      //   { type: 'divider', inset: true },
+      //   {
+      //     prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+      //     title: 'Birthday gift',
+      //     subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+      //   },
+      //   { type: 'divider', inset: true },
+      //   {
+      //     prependAvatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+      //     title: 'Recipe to try',
+      //     subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+      //   },
+      //   ])    
         
     const messages = ref( [
         {
@@ -195,7 +250,23 @@ export default {
       
       const lorem = ref('Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico iuvaret debitis mel an, et cum zril menandri. Eum in consul legimus accusam. Ea dico abhorreant duo, quo illum minimum incorrupte no, nostro voluptaria sea eu. Suas eligendi ius at, at nemore equidem est. Sed in error hendrerit, in consul constituam cum.')
 
-            return {items, messages, lorem}      
+           
+    
+
+    const counter = useCounterStore()
+  
+     const aspirants = computed(()=>counter.aspirants)
+
+    onMounted(()=>{
+       counter.loadtAspirants()
+    })
+
+      
+      return {messages, lorem, aspirants}      
     },
 }
 </script>
+
+<style scoped>
+  
+</style>

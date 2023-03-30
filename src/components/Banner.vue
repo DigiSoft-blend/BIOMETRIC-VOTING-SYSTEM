@@ -144,6 +144,7 @@ sm="4"
 
             <v-divider></v-divider>
 
+
     <!-- <v-card-actions class="pa-4">
       Rate this App
 
@@ -183,11 +184,17 @@ export default {
          counter.formErrorFlag1 = false
     }
 
+     const aspirants = computed(()=>counter.aspirants)
+
     onMounted(()=>{
        reset()
+       counter.loadtAspirants()
     })
 
-    return { Count }
+    return { 
+      Count, 
+      aspirants
+    }
   },
 }
 </script>

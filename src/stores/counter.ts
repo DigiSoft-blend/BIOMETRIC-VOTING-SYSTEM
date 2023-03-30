@@ -18,7 +18,9 @@ state: () => ({
   userRegistered: [],
   token:"",
   tokenLoader: false,
-  tokenValid: false
+  tokenValid: false,
+  aspirants: "",
+  aspLoader: false
 }),
 
 
@@ -67,6 +69,7 @@ actions: {
       })
     }) 
   },
+
 
   submitVotersCred(credentials : any){
     this.fromRegLoad = true
@@ -186,6 +189,24 @@ actions: {
         reject(error) 
         }) 
       })   
+  },
+
+  loadtAspirants(){
+    this.aspLoader = true
+    return new Promise(( resolve, reject) => {  
+    http.get("/Aspirants").then(response => {
+      const res = response.data
+      this.aspirants = res
+      this.aspLoader = false
+      resolve(response) 
+      })
+      .catch(error => {
+      const err = error.response.data
+      console.log(err)
+      this.aspLoader = false
+      reject(error) 
+      })
+    }) 
   },
 },
 
