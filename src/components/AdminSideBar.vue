@@ -31,12 +31,15 @@
           <v-divider></v-divider>
   
           <v-list density="compact" nav>
-          <router-link to="/admindashboard">
+          <router-link to="/admindashboard" class="link">
             <v-list-item prepend-icon="mdi-home" title="Home" value="home"></v-list-item>
           </router-link> 
-          <router-link to="/registration">
+          <router-link to="/registration" class="link">
             <v-list-item prepend-icon="mdi-account" title="Registration" value="Register"></v-list-item>
           </router-link>
+         
+            <v-list-item @click="logout()" prepend-icon="mdi-logout" title="logout" value="Register"></v-list-item>
+         
             <!-- <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
             <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item> -->
           </v-list>
@@ -52,9 +55,14 @@
 <script lang="ts">
 import { onMounted, ref } from 'vue'
 import { notify } from "@kyvg/vue3-notification";
+import { useCounterStore } from '@/stores/counter';
+import router from '@/router';
 export default {
     setup(){
-      
+
+
+      const counter = useCounterStore()
+
         const items = ref([
           { title: 'Home', icon: 'mdi-home-city' },
           { title: 'My Account', icon: 'mdi-account' },
@@ -64,9 +72,13 @@ export default {
         const rail = ref(true)
         const drawer = ref(true)
 
-        // const stop = () => {
-        //     rail.value = !rail.value
-        // }
+        const logout = () => {
+          counter.logout().then(()=>{
+            router.push("/")
+          }).catch((error)=>{
+            console.log(error)
+          })
+        }
 
         onMounted(()=>{
             notify({
@@ -79,7 +91,8 @@ export default {
         return{
             items,
             rail,
-            drawer
+            drawer,
+            logout
         }
 
     }

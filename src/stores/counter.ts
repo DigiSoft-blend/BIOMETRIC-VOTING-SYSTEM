@@ -24,7 +24,8 @@ state: () => ({
   aspLoader: false,
   aspLoader2: false,
   voteCount: 0,
-  aspirant: ""
+  aspirant: "",
+  logoutLoader: false
 }),
 
 
@@ -214,6 +215,9 @@ actions: {
     }) 
   },
 
+ 
+  
+
   loadtallAspirants(){
     this.aspLoader2 = true
     return new Promise(( resolve, reject) => {  
@@ -356,6 +360,31 @@ actions: {
       })   
   },
 
+  logout(){
+    this.logoutLoader = true
+    return new Promise(( resolve, reject) => {  
+    http.post("/Account/logout").then(response => {
+      this.logoutLoader = false
+      resolve(response) 
+      })
+      .catch(error => {
+      this.logoutLoader = false
+      reject(error) 
+      })
+    }) 
+  },
+
+  deleteUser(id : any){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.delete("/Users/"+id).then(response => {
+      resolve(response) 
+      })
+      .catch(error => {
+      reject(error) 
+      })
+    }) 
+  },
 
 },
 

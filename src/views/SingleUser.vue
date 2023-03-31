@@ -9,7 +9,7 @@
         class="my-4"
       >
         <v-banner-text>
-          Banner with three lines of text. One or two lines is preferable. Three lines should be considered the absolute maximum length on desktop in order to keep messages short and actionable.
+          Update registered voters credentials here.
         </v-banner-text>
         <v-banner-text>
           <span class="text-h6">Update {{ user.userName }}'s Profile  {{ user.email }} </span>

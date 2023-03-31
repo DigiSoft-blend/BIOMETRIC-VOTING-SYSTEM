@@ -21,7 +21,7 @@
   
       <v-banner-text>
       <h2>Registered Voters</h2>
-        Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
+        All registered voters are loaded here
       </v-banner-text>
   
       <v-banner-actions>
@@ -58,6 +58,9 @@
         <th class="text-left">
           Occupation
         </th>
+        <th class="text-left">
+          Action
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -72,6 +75,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.gender }}</td>
         <td>{{ user.occupation }}</td>
+        <td><v-btn @click="deleteUser(user.id)" variant="tonal" color="red" > Remove user</v-btn></td>
       </tr>
     </tbody>
   </v-table>
@@ -125,6 +129,12 @@
           loadusers()
         }
 
+        const deleteUser = (id :any) => {
+          counter.deleteUser(id).then(()=>{
+            loadusers()
+          })
+        }
+
         const users = computed(()=>counter.getUsers)
         const loader = computed(()=>counter.userLoader)
        
@@ -138,7 +148,8 @@
               drawer,
               users,
               loader,
-              reLoad
+              reLoad,
+              deleteUser
           }
   
       },

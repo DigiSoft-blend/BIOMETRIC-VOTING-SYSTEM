@@ -111,8 +111,9 @@
           }
 
           const deleteAsp = (id : any) => {
-            counter.deleteVoteCount(id)
-            loadApirants()
+            counter.deleteVoteCount(id).then(()=>{
+              loadApirants()
+            })
           }
   
           const users = computed(()=>counter.aspirants)
