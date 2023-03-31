@@ -29,6 +29,14 @@ const router = createRouter({
       component: () => import('../views/SingleUser.vue')
     },
     {
+      path: '/aspirant/:id',
+      name: 'aspirant',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SingleAspirant.vue')
+    },
+    {
       path: '/searchusers',
       name: 'searchusers',
       // route level code-splitting
@@ -84,7 +92,42 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/About.vue')
+    },
+
+    {
+      path: '/aspirantregister',
+      name: 'aspirantregister',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AspirantRegister.vue')
+    },
+    {
+      path: '/aspirants',
+      name: 'aspirants',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AspirantsView.vue')
+    },
+    {
+      path: '/searchaspirants',
+      name: 'searchaspirants',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SearchAspirants.vue')
+    },
+
+    {
+      path: '/votecount',
+      name: 'votecount',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/VoteCounts.vue')
     }
+    
 
   ]
 })

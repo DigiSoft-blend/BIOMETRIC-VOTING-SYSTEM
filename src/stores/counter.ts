@@ -20,8 +20,11 @@ state: () => ({
   tokenLoader: false,
   tokenValid: false,
   aspirants: "",
+  allApirants: "",
   aspLoader: false,
-  voteCount: 0
+  aspLoader2: false,
+  voteCount: 0,
+  aspirant: ""
 }),
 
 
@@ -101,6 +104,7 @@ actions: {
         }) 
       })   
   },
+
 
   updateVotersCred(id: any, credentials : any){
     this.updatUserLoader = true
@@ -210,6 +214,24 @@ actions: {
     }) 
   },
 
+  loadtallAspirants(){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.get("/Aspirants").then(response => {
+      this.aspLoader2 = false
+      const res = response.data
+      this.allApirants = res
+      resolve(response) 
+      })
+      .catch(error => {
+      const err = error.response.data
+      this.aspLoader2 = false
+      reject(error) 
+      })
+    }) 
+  },
+
+
   loadtVoteCount(id : any){
     return new Promise(( resolve, reject) => {  
     http.get("/VoteCount/"+id).then(response => {
@@ -224,6 +246,117 @@ actions: {
       })
     }) 
   },
+
+  submitAspirantsCred(credentials : any){
+    this.fromRegLoad = true
+    this.formErrorFlag1 = false
+    return new Promise(( resolve, reject) => { 
+    http.post("/Aspirants", {} , { params:{
+          Dob: credentials.dob,
+          Email: credentials.email,
+          state: credentials.state,
+          username: credentials.username,
+          occupation: credentials.occupation,
+          phonenumber: credentials.phonenumber,
+          senatorialdistrict: credentials.senatorialdistrict,
+          gender: credentials.gender,
+          role: credentials.role
+      }},
+      ).then(response => {
+        const res = response.data
+        this.userRegistered = res
+        this.fromRegLoad = false
+        console.log(this.userRegistered) 
+        resolve(response) 
+        })
+        .catch(error => {
+         this.fromRegLoad = false
+         this.formErrorFlag1 = true
+        const err = error.response.data.errors
+        reject(error) 
+        }) 
+      })   
+  },
+
+  
+  deleteAspirants(id : any){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.delete("/Aspirants/"+id).then(response => {
+      this.aspLoader2 = false
+      resolve(response) 
+      })
+      .catch(error => {
+      this.aspLoader2 = false
+      reject(error) 
+      })
+    }) 
+  },
+
+  deleteVoteCount(id : any){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.delete("/VoteCount/"+id).then(response => {
+      this.aspLoader2 = false
+      resolve(response) 
+      })
+      .catch(error => {
+      this.aspLoader2 = false
+      reject(error) 
+      })
+    }) 
+  },
+ 
+
+  loadSingleAspirant(id: any){
+    this.userLoader = true
+    return new Promise(( resolve, reject) => {  
+    http.get("/Aspirants/"+id).then(response => {
+      const res = response.data
+      this.aspirant = res
+      this.userLoader = false
+      console.log(this.user)
+      resolve(response) 
+      })
+      .catch(error => {
+      const err = error.response.data
+      console.log(err)
+      this.userLoader = false
+      reject(error) 
+      })
+    }) 
+  },
+
+ 
+  updateAspirantsCred(id: any, credentials : any){
+    this.updatUserLoader = true
+    return new Promise(( resolve, reject) => { 
+    http.put("/Aspirants/"+id, {} , { params:{
+          Dob: credentials.dob,
+          Email: credentials.email,
+          state: credentials.state,
+          username: credentials.username,
+          occupation: credentials.occupation,
+          phonenumber: credentials.phonenumber,
+          senatorialdistrict: credentials.senatorialdistrict,
+          gender: credentials.gender,
+          role: credentials.role
+      }},
+      ).then(response => {
+        const res = response.data
+        this.updatUserLoader = false
+        console.log(this.userRegistered) 
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data.errors
+        this.updatUserLoader = false
+        reject(error) 
+        }) 
+      })   
+  },
+
+
 },
 
 
@@ -240,7 +373,16 @@ getters:{
 
   getUsers: (state) => {
     return state.users
+  },
+
+  getAspirants: (state) => {
+    return  state.allApirants
+  },
+
+  getAspirant: (state) => {
+    return state.aspirant
   }
+
 }
 
 })

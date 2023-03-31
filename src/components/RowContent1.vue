@@ -10,7 +10,7 @@
       <v-card
         v-for="asp in aspirants" :key=asp.id
             color="dark"
-            theme="light"
+            theme="dark"
             class="mb-4"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
@@ -32,23 +32,31 @@
     <!-- {{ asp.aspirantVoteCount }} -->
                 </v-card-actions>
               </div>
-              <v-avatar
+              <!-- <v-avatar
                 class="ma-3"
                 size="50"
                 rounded="50"
               >
                 <v-img src="/Untitled-design.png"></v-img>
-              </v-avatar>
+              </v-avatar> -->
 
               <v-avatar
                 class="ma-3"
-                size="70"
+                size="100"
                 rounded="0"
               >
                 <v-img src="/user (2).png"></v-img>
               </v-avatar>
              
             </div>
+
+             <v-avatar
+                class="ma-3 d-flex"
+                size="50"
+                rounded="50"
+              >
+                <v-img src="/Untitled-design.png"></v-img>
+              </v-avatar>
             
           </v-card>
 

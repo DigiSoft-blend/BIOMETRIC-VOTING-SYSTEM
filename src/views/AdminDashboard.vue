@@ -18,12 +18,14 @@
     </template>
 
     <v-banner-text>
-    <h2>Aspirants</h2>
-      Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
+    <h2>Register Aspirants</h2>
+     Register aspirants here. 
     </v-banner-text>
 
     <v-banner-actions>
-      <v-btn variant="tonal" color="success">Aspirants Interface</v-btn>
+    <router-link class="link" to="/aspirantregister">
+      <v-btn variant="tonal" color="success">Register Now</v-btn>
+    </router-link>  
     </v-banner-actions>
   </v-banner>
 
@@ -44,7 +46,6 @@
 
     <v-banner-text>
     <h2>Roles</h2>
-      Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
     </v-banner-text>
 
     <v-banner-actions>
@@ -70,7 +71,7 @@
 
     <v-banner-text>
     <h2>Users</h2>
-      Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
+    View users here
     </v-banner-text>
 
     <v-banner-actions>
@@ -94,12 +95,14 @@
     </template>
 
     <v-banner-text>  
-    <h2>Vote Counts</h2>
-      Banner with two lines of text. If the text is too long to fit on two lines then an ellipsis will be used to hide the remaining content. So this next line will be hidden.
+    <h2>View Aspirants</h2>
+    View aspirants here
     </v-banner-text>
 
     <v-banner-actions>
-      <v-btn variant="tonal" color="success">Vote Counts Interface</v-btn>
+      <router-link class="link" to="/aspirants">
+      <v-btn variant="tonal" color="success">Load Aspirants</v-btn>
+    </router-link> 
     </v-banner-actions>
   </v-banner>
 
