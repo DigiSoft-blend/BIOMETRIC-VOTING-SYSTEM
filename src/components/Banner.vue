@@ -91,6 +91,7 @@ sm="4"
                 <v-card-subtitle>Your vote counts !</v-card-subtitle>
 
                 <v-card-actions>
+                  <router-link to="/about" class="link">
                   <v-btn
                     class="ml-2"
                     variant="outlined"
@@ -98,6 +99,7 @@ sm="4"
                   >
                     Learn More
                   </v-btn>
+                </router-link>
                 </v-card-actions>
               </div>
 

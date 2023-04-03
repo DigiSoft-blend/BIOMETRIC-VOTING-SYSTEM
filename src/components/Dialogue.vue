@@ -157,7 +157,6 @@ export default {
           e.preventDefault()
           counter.generateToken(username1.value).then(()=> {
             openToken.value=true
-            
                 notify({
                   title: "Request Accepted",
                   text: "",

@@ -1,6 +1,6 @@
 <template>
     <v-footer
-      class="bg-indigo-lighten-1 text-center d-flex flex-column padd"
+      class=" text-center d-flex flex-column padd"
     >
       <div>
         <v-btn
@@ -41,5 +41,7 @@
 <style scoped>
  .padd{
     padding-bottom: 100px;
+    background: linear-gradient(to top right, rgba(19,84,122,.8), rgba(128,208,199,.8));
+    color: white;
  }
 </style>

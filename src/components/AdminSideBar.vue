@@ -14,8 +14,8 @@
           location="right"
         >
           <v-list-item
-            prepend-avatar="https://randomuser.me/api/portraits/men/85.jpg"
-            title="John Leider"
+            prepend-avatar="/user (2).png"
+            title="Administrator"
             nav
             class="mt"
           >
