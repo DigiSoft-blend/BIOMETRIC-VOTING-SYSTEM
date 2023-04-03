@@ -161,12 +161,12 @@ actions: {
   },
 
 
-  generateToken(username : any){
+  generateToken(name : any){
     this.tokenLoader = true
     return new Promise(( resolve, reject) => { 
-    http.get("/Token/GetTokenByName/"+username
+    http.get("/Token/GenerateToken/"+name
       ).then(response => {
-        const res = response.data.value
+        const res = response.data
         this.token = res
         this.tokenLoader = false
         resolve(response) 

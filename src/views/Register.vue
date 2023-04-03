@@ -38,8 +38,8 @@
           <v-text-field
             v-model="username"
             :rules="nameRules"
-            :counter="10"
-            label="First name"
+            :counter="40"
+            label="Full name"
             required
           ></v-text-field>
         </v-col>
@@ -197,7 +197,7 @@ import { notify } from "@kyvg/vue3-notification";
 
         const nameRules = ref([
          (v: any) => !!v || 'Name is required',
-        (v: any) => (v && v.length <= 40) || 'Name must be less than 10 characters',
+        (v: any) => (v && v.length <= 40) || 'Name must be less than 40 characters',
         ])
         
        const emailRules = ref([

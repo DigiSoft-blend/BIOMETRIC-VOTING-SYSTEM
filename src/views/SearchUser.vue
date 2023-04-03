@@ -10,7 +10,7 @@
         flat
       >
         <template v-slot:prepend>
-          <router-link to="/users" class="link">
+        <router-link to="/users" class="link">
           <v-btn icon="mdi-arrow-left">
           </v-btn>
         </router-link>

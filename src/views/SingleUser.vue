@@ -19,7 +19,10 @@
          <router-link to="/searchusers" class="link">
             <v-btn>Cancel</v-btn>
          </router-link>  
-         <Dialogue></Dialogue>
+         <!-- <Dialogue></Dialogue> -->
+         <router-link to="/tokens" class="link">
+            <v-btn>Tokens</v-btn>
+         </router-link>
       </template>  
       </v-banner>
     </div>
