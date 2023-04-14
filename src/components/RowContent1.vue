@@ -151,6 +151,9 @@ export default {
 
     onMounted(()=>{
        counter.loadtAspirants()
+       counter.getRole()
+       counter.getRoleSingle()
+       counter.postRole()
       //  counter.loadtVoteCount("silas")
     })
 

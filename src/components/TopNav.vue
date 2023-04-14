@@ -23,6 +23,7 @@
             >
             <router-link to="/" class="link"><v-tab>Home</v-tab></router-link>
             <router-link to="/about" class="link"><v-tab>About</v-tab></router-link>
+          
          </v-tabs>
         </template>
        
@@ -62,6 +63,10 @@
               <!-- <router-link to="/registration" class="link"><v-list-item prepend-icon="mdi-account" title="Register" value="register"></v-list-item></router-link> -->
               <router-link to="/about" class="link"><v-list-item prepend-icon="mdi-earth" title="About" value="About"></v-list-item></router-link>
               <!-- <router-link to="/" class="link"><v-list-item prepend-icon="mdi-help" title="Help" value="Help"></v-list-item></router-link> -->
+           
+              <v-list-item  @click="logout()" prepend-icon="mdi-logout" title="logout" value="logout"  class="link"></v-list-item>
+            
+           
             </v-list>
             
         <!-- </v-list-item-group> -->
@@ -73,18 +78,30 @@
   <script lang="ts">
   import { ref } from 'vue';
 import router from '@/router';
+import { useCounterStore } from '@/stores/counter';
   export default {
     setup(){
+      const counter = useCounterStore()
       const drawer = ref(false)
       const tab = ref(null)
 
       const adminReg = () => {
         router.push('/adminlogin')
       }
+
+      const logout = () => {
+          counter.logout().then(()=>{
+            router.push("/")
+          }).catch((error)=>{
+            console.log(error)
+          })
+        }
+
       return {
         drawer,
         tab,
-        adminReg
+        adminReg,
+        logout
       }
     }
     // el: '#app',

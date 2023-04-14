@@ -48,9 +48,11 @@
     <h2>Roles</h2>
     </v-banner-text>
 
-    <v-banner-actions>
-      <v-btn variant="tonal" color="success">Roles Interface</v-btn>
-    </v-banner-actions>
+      <v-banner-actions>
+        <router-link class="link" to="/roles">
+          <v-btn variant="tonal" color="success">Roles Interface</v-btn>
+        </router-link>
+      </v-banner-actions>
   </v-banner>
 
         </v-sheet>

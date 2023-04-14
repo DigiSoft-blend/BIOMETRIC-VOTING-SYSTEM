@@ -1,6 +1,7 @@
 
 import { defineStore } from 'pinia'
 import http from "@/http-common";
+import axios from "axios";
 
 
 export const useCounterStore = defineStore('counter', {
@@ -25,7 +26,9 @@ state: () => ({
   aspLoader2: false,
   voteCount: 0,
   aspirant: "",
-  logoutLoader: false
+  logoutLoader: false,
+  Roles: "",
+  RolesSingle: ""
 }),
 
 
@@ -282,55 +285,70 @@ actions: {
       })   
   },
 
-  
-  deleteAspirants(id : any){
+ //////////////////////////////////////////////////////////////////
+
+  postRole(credentials : any){
+    return new Promise(( resolve, reject) => {  
+      http.post("/Roles", {} , { params:{
+        roleName: credentials.roleName,
+    }}).then(response => {
+        const res = response.data
+        console.log(this.Roles)
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data
+        console.log(err)
+        reject(error) 
+        })
+      }) 
+  },
+
+  getRole(){
+    return new Promise(( resolve, reject) => {  
+      http.get("/Roles").then(response => {
+        const res = response.data
+        this.Roles = res
+        console.log(this.Roles)
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data
+        console.log(err)
+        reject(error) 
+        })
+      }) 
+  },
+
+  getRoleSingle(id : any){
+    return new Promise(( resolve, reject) => {  
+      http.get("/Roles/" + id).then(response => {
+        const res = response.data
+        this.RolesSingle = res
+        console.log(this.Roles)
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data
+        console.log(err)
+        reject(error) 
+        })
+      }) 
+  },
+
+  deleteRole(id : any){
     this.aspLoader2 = true
     return new Promise(( resolve, reject) => {  
-    http.delete("/Aspirants/"+id).then(response => {
-      this.aspLoader2 = false
+    http.delete("/Roles/"+id).then(response => {
       resolve(response) 
       })
       .catch(error => {
-      this.aspLoader2 = false
       reject(error) 
       })
     }) 
   },
 
-  deleteVoteCount(id : any){
-    this.aspLoader2 = true
-    return new Promise(( resolve, reject) => {  
-    http.delete("/VoteCount/"+id).then(response => {
-      this.aspLoader2 = false
-      resolve(response) 
-      })
-      .catch(error => {
-      this.aspLoader2 = false
-      reject(error) 
-      })
-    }) 
-  },
- 
-
-  loadSingleAspirant(id: any){
-    this.userLoader = true
-    return new Promise(( resolve, reject) => {  
-    http.get("/Aspirants/"+id).then(response => {
-      const res = response.data
-      this.aspirant = res
-      this.userLoader = false
-      console.log(this.user)
-      resolve(response) 
-      })
-      .catch(error => {
-      const err = error.response.data
-      console.log(err)
-      this.userLoader = false
-      reject(error) 
-      })
-    }) 
-  },
-
+ ///////////////////////////////////////////////////////////////////////
  
   updateAspirantsCred(id: any, credentials : any){
     this.updatUserLoader = true
