@@ -46,6 +46,7 @@
 
     <v-banner-text>
     <h2>Roles</h2>
+    Create new aspirant roles here. 
     </v-banner-text>
 
       <v-banner-actions>
@@ -87,7 +88,7 @@
       </v-col>
       <v-col>
         <v-sheet class="pa-2 ma-2 border">
-            <v-banner
+   <v-banner
     color="pink-darken-1"
     icon="mdi-lock"
     lines="two"
@@ -112,18 +113,34 @@
       </v-col>
     </v-row>
 
-    <!-- <v-row no-gutters>
-      <v-col cols="2">
-        <v-sheet class="pa-2 ma-2">
-          .v-col-2
-        </v-sheet>
-      </v-col>
+    <v-row no-gutters>
+      
       <v-col>
         <v-sheet class="pa-2 ma-2">
-          .v-col-auto
+          <v-banner
+    color="pink-darken-1"
+    icon="mdi-lock"
+    lines="two"
+  >
+    <template v-slot:prepend>
+      <v-avatar></v-avatar>
+    </template>
+
+    <v-banner-text>  
+    <h2>View Tokens</h2>
+    View tokens here
+    </v-banner-text>
+
+    <v-banner-actions>
+      <router-link class="link" to="/usertokens">
+      <v-btn variant="tonal" color="success">Load Tokens</v-btn>
+    </router-link> 
+    </v-banner-actions>
+  </v-banner>
+
         </v-sheet>
       </v-col>
-    </v-row> -->
+    </v-row>
 </v-col>
 
     <AdminSideBar></AdminSideBar>

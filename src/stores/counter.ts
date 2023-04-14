@@ -28,7 +28,8 @@ state: () => ({
   aspirant: "",
   logoutLoader: false,
   Roles: "",
-  RolesSingle: ""
+  RolesSingle: "",
+  Tokens: ""
 }),
 
 
@@ -402,6 +403,23 @@ actions: {
       reject(error) 
       })
     }) 
+  },
+
+
+  getTokens(){
+    return new Promise(( resolve, reject) => {  
+      http.get("/Token").then(response => {
+        const res = response.data
+        this.Tokens = res
+        console.log(this.Roles)
+        resolve(response) 
+        })
+        .catch(error => {
+        const err = error.response.data
+        console.log(err)
+        reject(error) 
+        })
+      }) 
   },
 
 },
