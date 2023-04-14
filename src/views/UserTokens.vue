@@ -20,8 +20,9 @@ elevation="8"
   <v-avatar></v-avatar>
 </template>
 
-
+<h5 class="pa-2">Registered Voters Token</h5>
 <v-table
+class="mt-5"
 fixed-header
 height="400px"
 >

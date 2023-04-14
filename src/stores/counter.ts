@@ -422,6 +422,33 @@ actions: {
       }) 
   },
 
+  deleteAspirants(id : any){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.delete("/Aspirants/"+id).then(response => {
+      resolve(response) 
+      })
+      .catch(error => {
+      reject(error) 
+      })
+    }) 
+  },
+
+  
+  deleteVoteCount(id : any){
+    this.aspLoader2 = true
+    return new Promise(( resolve, reject) => {  
+    http.delete("/VoteCount/"+id).then(response => {
+      this.aspLoader2 = false
+      resolve(response) 
+      })
+      .catch(error => {
+        this.aspLoader2 = false
+      reject(error) 
+      })
+    }) 
+  },
+
 },
 
 
