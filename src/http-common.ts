@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://sundaymba2-001-site1.atempurl.com/api",
+  baseURL: "http://votingapp-001-site1.dtempurl.com/api",
   headers: {
     "Content-type": "application/json",
     "Accept": "application/json",
